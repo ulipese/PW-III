@@ -27,12 +27,12 @@ namespace ExeFelipeEMassagliI.Controllers
                 ViewData["AlunoCheck"] = TempData["Aluno"];
             } 
             
-            
             return View();
         }
         public ActionResult RedirectGoogle()
         {
             return Redirect("https://google.com");
         }
+
     }
 }
