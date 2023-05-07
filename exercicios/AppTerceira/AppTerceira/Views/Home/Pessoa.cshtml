@@ -1,0 +1,30 @@
+﻿@model AppTerceira.Models.Pessoa
+@{
+    ViewBag.Title = "Pessoa";
+}
+
+<h2>Cadastrar Pessoa</h2>
+
+<form action="ConsultaPessoa" method="post">
+    <div>
+        <label for="PessoaId">Código</label>
+    </div>
+    <div>
+        <input type="number" value="@Model.Id" name="Id" />
+    </div>
+    <br />
+    <div>
+        <label for="PessoaNome">Nome</label>
+        <input type="text" value="@Model.Nome" name="Nome" />
+    </div>
+    <br />
+    <div>
+        <label for="PessoaSexo">Sexo</label>
+        <input type="text" value="@Model.Sexo" name="Sexo" />
+    </div>
+    <br />
+    <div>
+        <input type="submit" value="Cadastrar" />
+    </div>
+
+</form>

@@ -1,0 +1,19 @@
+﻿@model AppTerceira.Models.Juridica
+@{
+    ViewBag.Title = "Contact";
+}
+<main aria-labelledby="title">
+
+    <h2>@Model.Id</h2>
+    <h2>@Model.Nome</h2>
+    <h2>@Model.Cnpj</h2>
+    <h2>@Model.IE</h2>
+    <br />
+    <div>
+        @if (@TempData["Id"] != null)
+        {
+        <h4>Código: @TempData["Id"] Nome: @TempData["Nome"] CNPJ: @TempData["Cnpj"] IE: @TempData["IE"]</h4>
+        }
+    </div>
+
+</main>
