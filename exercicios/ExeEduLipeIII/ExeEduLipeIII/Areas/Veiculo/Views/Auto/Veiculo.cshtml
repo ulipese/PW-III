@@ -1,0 +1,17 @@
+﻿@model ExeEduLipeIII.Models.Carro
+@{
+    ViewBag.Title = "Veiculo";
+}
+
+<h2>Veiculos</h2>
+
+<div>
+    <img src="~/Img/ducati-moto.png" alt="Moto Ducati" width="500px" />
+
+    <h4>@ViewBag.MotoInfo</h4>
+</div> <br>
+<div>
+    <img src="~/Img/rolls-royce-carro.png" alt="Moto Ducati" width="500px" />
+
+    <h4>@Model.Fabricante / @Model.Tipo / @Model.Nome / Automática </h4>
+</div>
