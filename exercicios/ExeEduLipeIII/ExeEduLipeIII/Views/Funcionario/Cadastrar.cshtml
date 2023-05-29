@@ -4,20 +4,21 @@
     ViewBag.Title = "Cadastrar";
 }
 
-<h2>Cadastrar</h2>
-
-<form action="SelectFunc" method="get">
+<h2>Cadastre um Funcionário</h2>
+<h4 style="background-color: red; color: white;">@TempData["InputNull"]</h4>
+<form action="SelectFunc" method="post">
     <div>
-        <label for="Codigo">Código</label> <br>
-        <input type="number" value="@Model.Codigo" name="Codigo">
+        <label for="FuncionarioCodigo">Código</label> <br>
+        <input type="number" name="Codigo">
+        
     </div>
     <div>
-        <label for="Nome">Nome</label> <br>
-        <input type="text" value="@Model.Nome" name="Nome">
+        <label for="FuncionarioNome">Nome</label> <br>
+        <input type="text" name="Nome" value="@TempData["Nome"]">
     </div>
     <div>
-        <label for="Funcao">Função</label> <br>
-        <input type="text" value="@Model.Funcao" name="Funcao">
+        <label for="FuncionarioFuncao">Função</label> <br>
+        <input type="text" name="Funcao" value="@TempData["Funcao"]">
     </div> <br> 
     <button type="submit">Cadastrar</button>
 </form>

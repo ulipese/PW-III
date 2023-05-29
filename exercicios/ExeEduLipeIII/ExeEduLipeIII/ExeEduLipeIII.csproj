@@ -130,6 +130,7 @@
     <Compile Include="Models\Carro.cs" />
     <Compile Include="Models\Funcionario.cs" />
     <Compile Include="Models\Moto.cs" />
+    <Compile Include="Models\Nota.cs" />
     <Compile Include="Models\Veiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -195,6 +196,8 @@
     <Content Include="Views\Funcionario\Index.cshtml" />
     <Content Include="Views\Funcionario\Cadastrar.cshtml" />
     <Content Include="Views\Funcionario\SelectFunc.cshtml" />
+    <Content Include="Views\Home\Nota.cshtml" />
+    <Content Include="Views\Home\CalculaNota.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

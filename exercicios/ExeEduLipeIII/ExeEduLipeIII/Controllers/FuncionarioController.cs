@@ -1,4 +1,5 @@
 ﻿using ExeEduLipeIII.Models;
+using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,13 +23,28 @@ namespace ExeEduLipeIII.Controllers
 
             return View(funcionario);
         }
+        [HttpPost]
+        public ActionResult SelectFunc(FormCollection funcionario) {
+            if (funcionario["Codigo"] == "") {
+                TempData["Nome"] = funcionario["Nome"];
+                TempData["Funcao"] = funcionario["Funcao"];
+                TempData["InputNull"] = "O campo Código deve ser preenchido!";
+                return RedirectToAction("Cadastrar");
+            } else if (funcionario["Nome"] == "") {
+                TempData["Funcao"] = funcionario["Funcao"];
+                TempData["InputNull"] = "O campo Nome deve ser preenchido!";
+                return RedirectToAction("Cadastrar");
+            } else if (funcionario["Funcao"] == "") {
+                TempData["Nome"] = funcionario["Nome"];
+                TempData["InputNull"] = "O campo Função deve ser preenchido!";
+                return RedirectToAction("Cadastrar");
+            } else {
+                ViewBag.Codigo = funcionario["Codigo"];
+                ViewBag.Nome = funcionario["Nome"];
+                ViewBag.Funcao = funcionario["Funcao"];
+                return View();
+            }
 
-        public ActionResult SelectFunc(int Codigo, string Nome, string Funcao) {
-            ViewBag.Codigo = Codigo;
-            ViewBag.Nome = Nome;
-            ViewBag.Funcao = Funcao;
-
-            return View();
         }
     }
 }

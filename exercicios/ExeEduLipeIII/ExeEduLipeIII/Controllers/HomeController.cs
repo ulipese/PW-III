@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExeEduLipeIII.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -27,5 +28,22 @@ namespace ExeEduLipeIII.Controllers
 
             return View();
         }
+        public ActionResult Nota()
+        {
+            return View();
+        }
+        public ActionResult CalculaNota(int Erros)
+        {
+            if (Erros >= 0)
+            {
+                Nota nota = new Nota();
+                nota.NotaAluno = 10 - Erros;
+                return View(nota);
+            } else
+            {
+                return RedirectToAction("Nota");
+            }
+        }
+
     }
 }
